@@ -1,0 +1,657 @@
+/* === GOOGLE FONTS === */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Source+Sans+3:wght@400;600&display=swap");
+
+/* === CUSTOM PROPERTIES === */
+:root {
+  --bg: #f1f5f9;
+  --surface: #ffffff;
+  --primary: #0f4c81;
+  --primary-light: #1e6bb0;
+  --accent: #f59e0b;
+  --accent-light: #fef3c7;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(15, 76, 129, 0.08);
+  --shadow-hover: 0 6px 24px rgba(15, 76, 129, 0.18);
+}
+
+/* === RESET === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === BASE === */
+body {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 0;
+}
+
+/* === TYPOGRAPHY === */
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+h2 {
+  font-size: 1.7rem;
+}
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+a:hover {
+  color: var(--accent);
+  border-color: var(--primary);
+}
+
+abbr {
+  text-decoration: underline dotted var(--accent);
+  cursor: help;
+}
+
+mark {
+  background: var(--accent-light);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+strong {
+  color: var(--primary);
+}
+
+/* === HEADER === */
+header {
+  background: var(--primary);
+  padding: 2.5rem 2rem 2rem;
+}
+
+header h1 {
+  color: white;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+/* === NAV === */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+header nav ul li a {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  padding: 0.35rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+header nav ul li a:hover {
+  background: var(--accent);
+  color: var(--primary);
+  border-color: var(--accent);
+}
+
+/* === MAIN LAYOUT === */
+main {
+  max-width: 880px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* === ARTICLES === */
+article {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* === SECTIONS === */
+section {
+  margin-top: 2rem;
+}
+
+section > h3 {
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  border-bottom: 3px solid var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* === HTML5 LOGO IMG (inside section, not figure) === */
+section > img {
+  border-radius: var(--radius);
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin: 0.75rem 0;
+  box-shadow: var(--shadow);
+}
+
+/* === OL (how I learn list) === */
+article ol {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0 1rem;
+}
+
+article ol li {
+  padding: 0.25rem 0;
+}
+
+/* === ASIDE / DETAILS === */
+aside {
+  margin: 1.25rem 0;
+}
+
+details {
+  background: var(--bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem 1.25rem;
+}
+
+summary {
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  color: var(--primary);
+  list-style: none;
+}
+
+summary::before {
+  content: "▶ ";
+  font-size: 0.75rem;
+}
+
+details[open] summary::before {
+  content: "▼ ";
+}
+
+details p {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* === TABLE === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+caption {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  background: var(--primary);
+  padding: 0.85rem 1rem;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+thead th {
+  background: var(--primary-light);
+  color: white;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8fbff;
+}
+
+tbody tr:hover {
+  background: #ebf4ff;
+}
+
+tbody th[scope="row"] {
+  padding: 0.7rem 1rem;
+  color: var(--primary);
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  background: #f0f7ff;
+}
+
+tbody td {
+  padding: 0.7rem 1rem;
+  color: var(--text);
+}
+
+tfoot td {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+}
+
+/* === VACATION ARTICLE === */
+
+/* Top bullet list: Go to beach / mountains / city */
+#vacation > ul {
+  list-style: none;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 1.5rem;
+}
+
+#vacation > ul li {
+  background: var(--accent-light);
+  color: var(--primary);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: 1px solid var(--accent);
+}
+
+/* Places I'd like to visit list */
+#vacation section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#vacation section ul li > a {
+  font-size: 1.15rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+  border-bottom: none;
+}
+
+#vacation section ul li > a:hover {
+  color: var(--accent);
+}
+
+/* === FIGURES & IMAGES (vacation) === */
+figure {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: inline-block;
+  position: relative;
+  transition: box-shadow 0.3s;
+  max-width: 400px;
+  width: 100%;
+}
+
+figure:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+figure:hover img {
+  transform: scale(1.05);
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(15, 76, 129, 0.88));
+  color: white;
+  padding: 2rem 1rem 0.75rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* === DEFINITION LIST (places to avoid) === */
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.75rem;
+  align-items: start;
+}
+
+dt {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #b91c1c;
+  font-size: 0.88rem;
+  padding-top: 0.1rem;
+  letter-spacing: 0.3px;
+}
+
+dd {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin-bottom: 0.4rem;
+}
+
+footer a {
+  color: var(--accent);
+  border-bottom: none;
+  font-weight: 700;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  header {
+    padding: 1.5rem 1rem 1.25rem;
+  }
+  header h1 {
+    font-size: 1.6rem;
+  }
+  main {
+    padding: 0 0.75rem;
+    margin: 1rem auto;
+  }
+  article {
+    padding: 1.25rem;
+  }
+  table {
+    font-size: 0.78rem;
+  }
+  tbody th[scope="row"] {
+    white-space: normal;
+    font-size: 0.75rem;
+  }
+  figure img {
+    height: 180px;
+  }
+  #vacation > ul {
+    flex-direction: column;
+  }
+}
+
+/* === ABOUT PAGE === */
+
+/* Subtitle / tagline under h1 in header */
+header p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0.4rem;
+  letter-spacing: 0.4px;
+}
+
+/* Bio paragraphs */
+.bio p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+/* Contact address inside footer */
+footer address {
+  font-style: normal;
+  margin-bottom: 1.25rem;
+}
+
+footer address p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.82rem;
+  margin-bottom: 0.6rem;
+}
+
+footer address a {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: white;
+  padding: 0.4rem 1.1rem;
+  border-radius: 50px;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+footer address a:hover {
+  background: var(--accent);
+  color: var(--primary);
+  border-color: var(--accent);
+}
+
+/* === ABOUT PAGE — PROFILE CARD === */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--accent);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 14px rgba(15, 76, 129, 0.3);
+}
+
+.profile-info h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.profile-tagline {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.profile-handle {
+  color: var(--accent);
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+/* === BIO SECTION === */
+.bio {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.bio h3 {
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  border-bottom: 3px solid var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.bio p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 1.1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* === SKILLS & INTERESTS SECTIONS === */
+.skills,
+.interests {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+.skills h3,
+.interests h3 {
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  border-bottom: 3px solid var(--accent);
+  margin-bottom: 1.1rem;
+}
+
+/* === TAG LIST === */
+.tag-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tag {
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.tag--blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.tag--orange {
+  background: #ffedd5;
+  color: #c2410c;
+}
+.tag--green {
+  background: #dcfce7;
+  color: #15803d;
+}
+.tag--purple {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+.tag--red {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.tag--gold {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* === RESPONSIVE — ABOUT === */
+@media (max-width: 640px) {
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
